@@ -13,6 +13,7 @@
     <header>
         {% include './shared/menu.html' %}
     </header>
+    <br><br><br>
     <main>
         <div class="container-fluid">
             <div class="row">
@@ -20,8 +21,11 @@
                     <img src="../static/img/vegetales.jpg" alt="clase" class="img-fluid w-100 align-self-center">
                 </div>
                 <div class="col-12 col-md-8">
-                    <form>
+                    <form method="POST">
+                        <h1 class="fw-bold animate__animated animate__fadeInUp">REGISTRO DE PLATOS</h1>
                         {{formularioRegistro}}
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-outline-success">Registrar</button>
                     </form>
                 </div>
             </div>

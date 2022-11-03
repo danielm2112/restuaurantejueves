@@ -8,7 +8,8 @@ class FormularioPlatos(forms.Form):
     OPCIONES=(
         (1,'Entrada'),
         (2,'Plato fuerte'),
-        (3,'Postre')
+        (3,'Postre'),
+        (4,'Bebidas')
     )
 
     #DENTRO DE LA CLASE CADA ATRIBUTO SERA UN INPUT

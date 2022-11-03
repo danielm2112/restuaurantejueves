@@ -3,9 +3,10 @@ from django import forms
 class FormularioPersonal(forms.Form):
 
     OPCIONES=(
-        (1,'Chef'),
-        (2,'SubChef'),
-        (3,'Mesero')
+        (1,'Cocinero'),
+        (2,'Ayudante'),
+        (3,'Mesero'),
+        (4,'Administrador')
     )
 
     nombre=forms.CharField(
@@ -14,13 +15,13 @@ class FormularioPersonal(forms.Form):
         max_length=30
     )
 
-    identificacion=forms.CharField(
+    apellidos=forms.CharField(
         widget=forms.TextInput(attrs={'class':'form-control mb-3'}),
         required=True,
-        max_length=20
+        max_length=30
     )
 
-    descrpcion=forms.CharField(
+    fotoEmpleado=forms.CharField(
         widget=forms.TextInput(attrs={'class':'form-control mb-3'}),
         required=True,
         max_length=5
@@ -30,4 +31,15 @@ class FormularioPersonal(forms.Form):
         widget=forms.Select(attrs={'class':'form-control mb-3'}),
         required=True,
         choices=OPCIONES
+    )
+
+    salario=forms.CharField(
+        widget=forms.TextInput(attrs={'class':'form-control mb-3'}),
+        required=True
+    )
+
+    contacto=forms.CharField(
+        widget=forms.TextInput(attrs={'class':'form-control mb-3'}),
+        required=True,
+        max_length=15
     )

@@ -16,6 +16,16 @@ def Platos(request):
     datosParaTemplate={
         'formularioRegistro':formulario
     }
+    #PREGUNTAR SI EXISTE ALGUNA PETICION DE TIPO POST ASOCIADA A LA VISTA
+    if request.method=='POST':
+        #Deberiamos capturar los datos del formulario
+        datosDelFormulario=FormularioPlatos(request.POST)
+        #Verificar si los datos llegaron correctamente(VALIDACIONES OK)
+        if datosDelFormulario.is_valid():
+            #capturamos la data
+            datosPlato=datosDelFormulario.cleaned_data
+            print(datosDelFormulario)
+            print(datosPlato)
     return render(request,'platos.html',datosParaTemplate)
 
 def Personal(request):

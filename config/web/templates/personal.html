@@ -13,6 +13,7 @@
     <header>
         {% include './shared/menu.html' %}
     </header>
+    <br><br><br>
     <main>
         <div class="container-fluid">
             <div class="row">
@@ -21,7 +22,10 @@
                 </div>
                 <div class="col-12 col-md-8">
                     <form>
+                        <h1 class="fw-bold animate__animated animate__fadeInUp">REGISTRO DE PERSONAL</h1>
                         {{formularioPersonal}}
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-outline-success">Registrar</button>
                     </form>
                 </div>
             </div>
